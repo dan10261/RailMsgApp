@@ -1,0 +1,11 @@
+@import "semantic-ui";
+
+body{
+	height: 100vh;
+}
+.chatbox {
+	min-height: calc(80vh);
+}
+	.chatboxcard{
+	min-height: calc(100vh) !important;
+}
