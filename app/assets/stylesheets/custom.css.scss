@@ -4,8 +4,13 @@ body{
 	height: 100vh;
 }
 .chatbox {
-	min-height: calc(80vh);
+	//min-height: calc(80vh);
+	height: 400px;
 }
 	.chatboxcard{
-	min-height: calc(100vh) !important;
+	//min-height: calc(100vh) !important;
+	height:400px;
+}
+#messages{
+	overflow:auto;	
 }

@@ -4,50 +4,25 @@
 </h2>
 
 <div class="ui two column grid chatbox">
-<div class="twelve wide column">
- <div class="ui fluid raised card chatboxcard">
-   <div class="content">
-<div class="ui  feed">
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <a>Elliot Fu</a> added <a>Jenny Hess</a> as a friend
-      </div>
-    </div>
-  </div>
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <a><em>Stevie Feliciano</em></a> added <a>Elliot Fu</a> as a friend
-      </div>
-    </div>
-  </div>
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <a><em>Helen Troy</a></em> added <a>Christian Rocha</a> as a friend
-      </div>
-    </div>
-  </div>
-  <div class="event">
-    <div class="content">
-      <div class="summary">
-         <a>Christian Rocha</a> signed up for the  site.
-      </div>
-    </div>
-  </div>
-</div></div><!---End of card----->
-	  <div class="extra content">
-  	<form ui reply form>
-  		<div class="field">
-  			<div class="ui fluid icon input">
-  			<input type="text" placeholder="Enter a message...">
-  			<i class = "bordered inverted orange icon edit"></i>
-  			</div>
-  		</div>
-  	</form>
-  </div>
-</div></div>
+	<div class="twelve wide column">
+		 <div class="ui fluid raised card chatboxcard">
+		   <div class="content" id="messages">
+				<div class="ui feed" id="message-container">
+					<%= render @messages %><!---render message partial html and add the message information to it----->
+				</div>
+			</div><!---End of card----->
+			 <div class="content">
+		  	 	<%= form_for(@message,html: {class:"ui reply form", role: "form"}, url: message_path, remote: true) do |f|%>
+			  		<div class="field">
+			  			<div class="ui fluid icon input">
+			  			<%= f.text_field :body, placeholder: "Enter a message..."%>
+			  			<%= f.button '<i class = "bordered inverted orange icon edit"></i>'.html_safe%>
+			  			</div>
+			  		</div>
+		  		<% end %>
+		  	</div><!---End of reply input----->
+		</div><!---End of chatboxcard----->
+	</div>
 
   <div class="four wide column ">
  

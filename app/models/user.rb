@@ -1,4 +1,5 @@
 class User < ApplicationRecord
-  validates :username, uniqueness: {casesensitive: false}
+  has_many :messages
+  validates :username, presence: true, uniqueness: {case_sensitive: false}
   has_secure_password
 end
